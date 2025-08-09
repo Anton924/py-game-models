@@ -7,8 +7,7 @@ from db.models import Race, Skill, Player, Guild
 
 def main() -> None:
     with open("players.json", "r") as file:
-        content = file.read()
-        data = json.loads(content)
+        data = json.load(file)
     for user in data:
         Player.objects.create(
             nickname=user,
